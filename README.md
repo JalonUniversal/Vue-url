@@ -1,35 +1,29 @@
-# Vue-date
-## A smart vue-plugin for operating cookie in your project
+# Vue-url
+## A easy and small url parse plugin for your vue.js application
 
 ## How to use
-npm install vue-date -S
-## Details
-this plugin apply abilities to operate date object in your own vue program;
-now first get the date
+npm install vue-url -S
 
-### get instance
-import Vue from 'vue';
-import date from 'vue-date';
-Vue.use(date);
+### Nowtimes Only two APIs can you use
+1. append
+const query = {
+  name: 'test',
+  age: 18,
+  job: master
+}
+const url = 'https://www.google.com';
+this.$url.parse(url, query);
+// https://www.google.com?name=test&age=18&job=master
+2.parse
+// originalUrl: 'https://www.google.com?name=test&age=18&job=master';
+const url = this.$url.parse();
+console.log(url);
+// And then you can get the result;
+{
+  name: 'test',
+  age: 18,
+  job: master
+}
 
-### now ?
-const now = this.$date.now();
 
-### date ?
-const date = this.$date.date();
-
-### complete date object / array
-const complete_date = this.$date.genDate(); 
-// got {
-          year: 2017,
-          month: 12,
-          date: 31,
-          day: 31,
-          sec: 219034345
-        }
-// get array when do like this
-const complete_date_array = this.$date.genDate([]);
-// got [2017, 12, 31, 31, 219034345]
-
-### to be continue...
 
